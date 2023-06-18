@@ -1,24 +1,20 @@
 class Solution {
 public:
 
- string commonStr(string str1,string str2){
-          string str = ""; 
-          for(int i=0;i<str1.size();i++){
-              if(str1[i] == str2[i]){
-                  str += str1[i];
-              } else {
-                  break;
-              }
-          }
-          return str;
- }
-    
+
     
   string longestCommonPrefix(vector<string>& strs) {
-      string str = strs[0];
-      for(int i=0;i<strs.size();i++){
-          str = commonStr(strs[i],str);
-      }
-       return str;
+       sort(strs.begin(),strs.end());
+       string str = strs[0];
+       string str2 = strs[strs.size()-1];
+       string res = "";
+       for(int i=0;i<str.size();i++){
+           if(str[i] == str2[i]){
+               res+=str[i];
+           } else {
+               break;
+           }
+       }
+      return res;
     }
 };

@@ -10,7 +10,8 @@ public:
                left++;
              
            }
-           maxlength = max(right-left+1,maxlength);
+           maxlength = max(right-left+1,maxlength);  
+               
            s1.insert(s[right]);
            right++;
        }

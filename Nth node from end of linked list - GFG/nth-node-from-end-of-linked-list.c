@@ -19,35 +19,28 @@ void insert();
 //Function to find the data of nth node from the end of a linked list.
 int getNthFromLast(struct Node *head, int n)
 {
-         if(head==NULL){
-            return NULL;
+         if(head == NULL){
+             return NULL;
          }
-            
-        int len = 0;
-        
-        struct Node* temp = head;
-        
-        while(temp!=NULL)
-        {
-            len++;
-            temp = temp->next;
-        }
-        
-        temp = head;
-        
-        if(n>len)
-        {
-            return -1;
-        }
-        
-        for(int i=1; i<(len-n+1); i++)
-        {
-            temp = temp->next;
-        }
-        
-        return temp->data;
+         
+         struct Node* temp = head;
+         int len = 0;
+         while(temp != NULL){
+             len++;
+             temp = temp->next;
+         }
+         
+         if(n>len){
+             return -1;
+         }
+         
+         temp = head;
+         for(int i=0;i<(len-n);i++){
+             temp = temp->next;
+         }
+         return temp->data;
 } 
-//9 - 2+1 =6
+//9 - 2+1 =7
 
 
 

@@ -10,20 +10,30 @@ public:
             
               if(height[left] <= height[right]){
                 
-                if(height[left] >= maxleft)  maxleft = height[left]; 
+                if(height[left] >= maxleft)  
+                {
+                    maxleft = height[left]; 
+                }
                 else 
-                
+                {
                     res += maxleft - height[left];
-                    left++;
-                
-                
+                   
+                }
+                  
+                 left++;
+                  
             } else {
                   if(height[right]>=maxright)
+                  {
                       maxright = height[right];
+                  }
                    else 
+                   {
                       res += maxright-height[right];
-                      right--;
+                    
+                   }
                   
+                  right--;
               }
         }
         return res;
